@@ -116,6 +116,8 @@ The project features a fully automated deployment pipeline integrated with **Git
     4. Tags the image with both the running build number and the `latest` tag.
     5. Pushes the built image tags to the public Docker Hub repository: `ajaygangwar945/hadoop-learning-portal`.
 
+---
+
 ## 📝 Authors
 
 * **Ajay Gangwar** - [@ajaygangwar945](https://github.com/ajaygangwar945)
