@@ -20,6 +20,8 @@ The **Hadoop Learning Portal** is a sleek, modern, and interactive single-page e
 
 This repository contains everything from conceptual explanations of Big Data and core Hadoop architecture to practical code snippets for Apache Hive, HBase, Cassandra, and standard Java utility programs. It is built as a highly responsive web application, packaged with Docker, and deployed via standard automated CI/CD workflows.
 
+---
+
 ## 🚀 View Live Site
 
 The project is live and accessible online.
