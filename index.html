@@ -1,11 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hadoop Learning Portal</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --yellow: #f7c948;
+        --dark: #111827;
+        --dark2: #1f2937;
+        --blue: #2563eb;
+        --white: #ffffff;
+        --light: #f4f4f4;
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--dark), var(--dark2));
+        color: white;
+      }
+
+      /* Navbar */
+
+      nav {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+      }
+
+      nav ul li {
+        margin: 15px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--yellow);
+      }
+
+      /* Home */
+
+      .home {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .home h1 {
+        font-size: 4rem;
+        columns: var(--yellow);
+      }
+
+      .home p {
+        max-width: 700px;
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        margin-top: 30px;
+        padding: 15px 30px;
+        background: var(--yellow);
+        color: black;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+      }
+
+      /* Section */
+
+      section {
+        padding: 60px 10%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--yellow);
+        font-size: 2rem;
+      }
+
+      /* Cards */
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minimax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 15px;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translate(-10px);
+      }
+
+      .card h3 {
+        color: var(--yellow);
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+
+      .card ul {
+        padding-left: 20px;
+      }
+
+      /* Code */
+
+      pre {
+        background: #0d1117;
+        color: #58a6ff;
+        padding: 15px;
+        border-radius: 10px;
+        overflow: auto;
+        margin-top: 15px;
+      }
+
+      details {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Navbar-->
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#bigdata">Big Data</a></li>
+        <li><a href="#hadoop">Hadoop</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#yarn">YARN</a></li>
+        <li><a href="#hive">Hive</a></li>
+        <li><a href="#hbase">HBase</a></li>
+        <li><a href="#cassandra">Cassandra</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <section class="home" id="home">
+      <h1>🐘 Hadoop Learning Portal</h1>
+      <p>
+        Learn Big Data, Hadoop Architecture, Hadoop Ecosystem, Installation
+        Steps, Commands, and Frequently Asked Questions in one beautiful
+        educational webpage.
+      </p>
+      <a href="#bigdata" class="btn">Explore Hadoop</a>
+    </section>
+
+    <!--Big Data-->
+
+    <section id="bigdata">
+      <h2 class="section-title">Introduction to Big Data</h2>
+      <div class="card">
+        <p>
+          Big Data refers to huge volumes of structured, semi-structured and
+          unstructured data that cannot be processed efficiently using
+          traditional systems.
+        </p>
+
+        <h3>Types of Data</h3>
+        <ul>
+          <li>Structured Data</li>
+          <li>Semi-Structured Data</li>
+          <li>Unstructured Data</li>
+        </ul>
+
+        <h3>5 V's of Big Data</h3>
+        <ul>
+          <li>Volume</li>
+          <li>Velocity</li>
+          <li>Variety</li>
+          <li>Veracity</li>
+          <li>Value</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Hadoop -->
+
+    <section id="hadoop">
+      <h2 class="section-title">Introduction to Hadoop</h2>
+      <div class="card">
+        <p>
+          Apache Hadoop is an open-source framework used for distributed storage
+          and processing of large datasets.
+        </p>
+
+        <h3>Components</h3>
+        <ul>
+          <li>HDFS</li>
+          <li>MapReduce</li>
+          <li>YARN</li>
+          <li>Hadoop Common</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+
+    <section id="architecture">
+      <h2 class="section-title">Hadoop Architecture</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>NameNode</h3>
+          <p>Stores metadata and manages HDFS.</p>
+        </div>
+        <div class="card">
+          <h3>DataNode</h3>
+          <p>Stores actual data blocks.</p>
+        </div>
+        <div class="card">
+          <h3>JobTracker</h3>
+          <p>Schedules MapReduce jobs.</p>
+        </div>
+        <div class="card">
+          <h3>TaskTracker</h3>
+          <p>Executes tasks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HDFS -->
+
     
-</body>
+
+  </body>
 </html>
