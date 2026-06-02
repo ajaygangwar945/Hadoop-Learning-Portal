@@ -1,412 +1,409 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hadoop Learning Portal</title>
-    <link rel="icon" type="image/svg+xml" href="Apache Hadoop.svg">
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hadoop Learning Portal</title>
+  <link rel="icon" type="image/svg+xml" href="Apache Hadoop.svg">
 
-      html {
-        scroll-behavior: smooth;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-      :root {
-        --yellow: #f7c948;
-        --dark: #111827;
-        --dark2: #1f2937;
-        --blue: #2563eb;
-        --white: #ffffff;
-        --light: #f4f4f4;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      body {
-        background: linear-gradient(135deg, var(--dark), var(--dark2));
-        color: white;
-      }
+    :root {
+      --yellow: #f7c948;
+      --dark: #111827;
+      --dark2: #1f2937;
+      --blue: #2563eb;
+      --white: #ffffff;
+      --light: #f4f4f4;
+    }
 
-      /* Navbar */
+    body {
+      background: linear-gradient(135deg, var(--dark), var(--dark2));
+      color: white;
+    }
 
-      nav {
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+    /* Navbar */
 
-      nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        flex-wrap: wrap;
-      }
+    nav {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-      nav ul li {
-        margin: 15px;
-      }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
 
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        transition: 0.3s;
-      }
+    nav ul li {
+      margin: 15px;
+    }
 
-      nav ul li a:hover {
-        color: var(--yellow);
-      }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-      /* Home */
+    nav ul li a:hover {
+      color: var(--yellow);
+    }
 
-      .home {
-        min-height: 90vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 30px;
-      }
+    /* Home */
 
+    .home {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .home h1 {
+      font-size: 4rem;
+      columns: var(--yellow);
+    }
+
+    .home p {
+      max-width: 700px;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: var(--yellow);
+      color: black;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+
+    /* Section */
+
+    section {
+      padding: 60px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--yellow);
+      font-size: 2rem;
+    }
+
+    /* Cards */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minimax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translate(-10px);
+    }
+
+    .card h3 {
+      color: var(--yellow);
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    /* Code */
+
+    pre {
+      background: #0d1117;
+      color: #58a6ff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow: auto;
+      margin-top: 15px;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: black;
+    }
+
+    @media (max-width: 768px) {
       .home h1 {
-        font-size: 4rem;
-        columns: var(--yellow);
-      }
-
-      .home p {
-        max-width: 700px;
-        margin-top: 20px;
-        font-size: 1.2rem;
-      }
-
-      .btn {
-        margin-top: 30px;
-        padding: 15px 30px;
-        background: var(--yellow);
-        color: black;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: bold;
-      }
-
-      /* Section */
-
-      section {
-        padding: 60px 10%;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 40px;
-        color: var(--yellow);
         font-size: 2rem;
       }
 
-      /* Cards */
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minimax(250px, 1fr));
-        gap: 20px;
+      nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 5px;
       }
 
-      .card {
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        padding: 20px;
-        border-radius: 15px;
-        transition: 0.4s;
+      nav ul::-webkit-scrollbar {
+        display: none;
       }
 
-      .card:hover {
-        transform: translate(-10px);
+      nav ul li {
+        flex-shrink: 0;
       }
+    }
+  </style>
+</head>
 
-      .card h3 {
-        color: var(--yellow);
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
+<body>
+  <!--Navbar-->
 
-      .card ul {
-        padding-left: 20px;
-      }
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#bigdata">Big Data</a></li>
+      <li><a href="#hadoop">Hadoop</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#hive">Hive</a></li>
+      <li><a href="#hbase">HBase</a></li>
+      <li><a href="#cassandra">Cassandra</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
 
-      /* Code */
+  <section class="home" id="home">
+    <img src="Apache Hadoop.svg" width="100px" height="100px">
+    <h1>Hadoop Learning Portal</h1>
+    <p>
+      Learn Big Data, Hadoop Architecture, Hadoop Ecosystem, Installation
+      Steps, Commands, and Frequently Asked Questions in one beautiful
+      educational webpage.
+    </p>
+    <a href="#bigdata" class="btn">Explore Hadoop</a>
+  </section>
 
-      pre {
-        background: #0d1117;
-        color: #58a6ff;
-        padding: 15px;
-        border-radius: 10px;
-        overflow: auto;
-        margin-top: 15px;
-      }
+  <!--Big Data-->
 
-      details {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-      }
-
-      footer {
-        text-align: center;
-        padding: 30px;
-        background: black;
-      }
-
-      @media (max-width: 768px) {
-        .home h1{
-          font-size: 2rem;
-        }
-        nav ul {
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          justify-content: flex-start;
-          padding: 5px;
-        }
-
-        nav ul::-webkit-scrollbar {
-          display: none;
-        }
-
-        nav ul li {
-          flex-shrink: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!--Navbar-->
-
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#bigdata">Big Data</a></li>
-        <li><a href="#hadoop">Hadoop</a></li>
-        <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#hive">Hive</a></li>
-        <li><a href="#hbase">HBase</a></li>
-        <li><a href="#cassandra">Cassandra</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <section class="home" id="home">
-      <img src="Apache Hadoop.svg" width="100px" height="100px">
-      <h1>Hadoop Learning Portal</h1>
+  <section id="bigdata">
+    <h2 class="section-title">Introduction to Big Data</h2>
+    <div class="card">
       <p>
-        Learn Big Data, Hadoop Architecture, Hadoop Ecosystem, Installation
-        Steps, Commands, and Frequently Asked Questions in one beautiful
-        educational webpage.
+        Big Data refers to huge volumes of structured, semi-structured and
+        unstructured data that cannot be processed efficiently using
+        traditional systems.
       </p>
-      <a href="#bigdata" class="btn">Explore Hadoop</a>
-    </section>
 
-    <!--Big Data-->
+      <h3>Types of Data</h3>
+      <ul>
+        <li>Structured Data</li>
+        <li>Semi-Structured Data</li>
+        <li>Unstructured Data</li>
+      </ul>
 
-    <section id="bigdata">
-      <h2 class="section-title">Introduction to Big Data</h2>
+      <h3>5 V's of Big Data</h3>
+      <ul>
+        <li>Volume</li>
+        <li>Velocity</li>
+        <li>Variety</li>
+        <li>Veracity</li>
+        <li>Value</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Hadoop -->
+
+  <section id="hadoop">
+    <h2 class="section-title">Introduction to Hadoop</h2>
+    <div class="card">
+      <p>
+        Apache Hadoop is an open-source framework used for distributed storage
+        and processing of large datasets.
+      </p>
+
+      <h3>Components</h3>
+      <ul>
+        <li>HDFS</li>
+        <li>MapReduce</li>
+        <li>YARN</li>
+        <li>Hadoop Common</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+
+  <section id="architecture">
+    <h2 class="section-title">Hadoop Architecture</h2>
+    <div class="grid">
       <div class="card">
-        <p>
-          Big Data refers to huge volumes of structured, semi-structured and
-          unstructured data that cannot be processed efficiently using
-          traditional systems.
-        </p>
-
-        <h3>Types of Data</h3>
-        <ul>
-          <li>Structured Data</li>
-          <li>Semi-Structured Data</li>
-          <li>Unstructured Data</li>
-        </ul>
-
-        <h3>5 V's of Big Data</h3>
-        <ul>
-          <li>Volume</li>
-          <li>Velocity</li>
-          <li>Variety</li>
-          <li>Veracity</li>
-          <li>Value</li>
-        </ul>
+        <h3>NameNode</h3>
+        <p>Stores metadata and manages HDFS.</p>
       </div>
-    </section>
-
-    <!-- Hadoop -->
-
-    <section id="hadoop">
-      <h2 class="section-title">Introduction to Hadoop</h2>
       <div class="card">
-        <p>
-          Apache Hadoop is an open-source framework used for distributed storage
-          and processing of large datasets.
-        </p>
-
-        <h3>Components</h3>
-        <ul>
-          <li>HDFS</li>
-          <li>MapReduce</li>
-          <li>YARN</li>
-          <li>Hadoop Common</li>
-        </ul>
+        <h3>DataNode</h3>
+        <p>Stores actual data blocks.</p>
       </div>
-    </section>
-
-    <!-- Architecture -->
-
-    <section id="architecture">
-      <h2 class="section-title">Hadoop Architecture</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>NameNode</h3>
-          <p>Stores metadata and manages HDFS.</p>
-        </div>
-        <div class="card">
-          <h3>DataNode</h3>
-          <p>Stores actual data blocks.</p>
-        </div>
-        <div class="card">
-          <h3>JobTracker</h3>
-          <p>Schedules MapReduce jobs.</p>
-        </div>
-        <div class="card">
-          <h3>TaskTracker</h3>
-          <p>Executes tasks.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HDFS -->
-
-    <section>
-      <h2 class="section-title">HDFS</h2>
       <div class="card">
-        <p>
-          HDFS is Hadoop Distributed File System used for fault-tolerant
-          storage.
-        </p>
-        <pre>
+        <h3>JobTracker</h3>
+        <p>Schedules MapReduce jobs.</p>
+      </div>
+      <div class="card">
+        <h3>TaskTracker</h3>
+        <p>Executes tasks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HDFS -->
+
+  <section>
+    <h2 class="section-title">HDFS</h2>
+    <div class="card">
+      <p>
+        HDFS is Hadoop Distributed File System used for fault-tolerant
+        storage.
+      </p>
+      <pre>
 hdfs dfs -mkdir /data
 hdfs dfs -put file.txt /data
-hdfs dfs -ls /</pre
-        >
-      </div>
-    </section>
+hdfs dfs -ls /</pre>
+    </div>
+  </section>
 
-    <!-- MapReduce -->
+  <!-- MapReduce -->
 
-    <section>
-      <h2 class="section-title">MapReduce</h2>
-      <div class="card">
-        <p>MapReduce consists of Map, Shuffle and Reduce phases.</p>
-        <pre>Input -> Mapper -> Shuffle -> Reducer -> Output</pre>
-        <h3>Word Count Output</h3>
-        <pre>
+  <section>
+    <h2 class="section-title">MapReduce</h2>
+    <div class="card">
+      <p>MapReduce consists of Map, Shuffle and Reduce phases.</p>
+      <pre>Input -> Mapper -> Shuffle -> Reducer -> Output</pre>
+      <h3>Word Count Output</h3>
+      <pre>
 Hadoop : 3
-BigData : 2</pre
-        >
-      </div>
-    </section>
+BigData : 2</pre>
+    </div>
+  </section>
 
-    <!-- Yarn -->
+  <!-- Yarn -->
 
-    <section>
-      <h2 class="section-title">YARN</h2>
+  <section>
+    <h2 class="section-title">YARN</h2>
+    <div class="card">
+      <p>Yet Another Resource Negotiator manages cluster resources.</p>
+      <ul>
+        <li>Resource Manager</li>
+        <li>Node Manager</li>
+        <li>Application Master</li>
+        <li>Containers</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Java Programs</h2>
+    <dev class="grid">
       <div class="card">
-        <p>Yet Another Resource Negotiator manages cluster resources.</p>
-        <ul>
-          <li>Resource Manager</li>
-          <li>Node Manager</li>
-          <li>Application Master</li>
-          <li>Containers</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-        <h2 class="section-title">Java Programs</h2>
-        <dev class="grid">
-            <div class="card">
-          <h3>Factorial</h3>
-          <pre>
+        <h3>Factorial</h3>
+        <pre>
 int fact=1;
 for(int i=1;i<=n;i++)
-fact*=i;</pre
-          >
-        </div>
-        <div class="card">
-          <h3>Palindrome</h3>
-          <pre>madam -> madam</pre>
-        </div>
-        <div class="card">
-          <h3>Armstrong</h3>
-          <pre>153 = 1³+5³+3³</pre>
-        </div>
-        <div class="card">
-          <h3>Sum of Even</h3>
-          <pre>
-for(i=1;i<=n;i++)
-if(i%2==0) sum+=i;</pre
-          >
-        </div>
-        </div>
-    </section>
-
-    <!-- Hive -->
-
-    <section id="hive">
-        <h2 class="section-title">Apache Hive</h2>
+fact*=i;</pre>
+      </div>
       <div class="card">
-        <p>Hive is a data warehouse tool that uses HiveQL.</p>
+        <h3>Palindrome</h3>
+        <pre>madam -> madam</pre>
+      </div>
+      <div class="card">
+        <h3>Armstrong</h3>
+        <pre>153 = 1³+5³+3³</pre>
+      </div>
+      <div class="card">
+        <h3>Sum of Even</h3>
         <pre>
+for(i=1;i<=n;i++)
+if(i%2==0) sum+=i;</pre>
+      </div>
+      </div>
+  </section>
+
+  <!-- Hive -->
+
+  <section id="hive">
+    <h2 class="section-title">Apache Hive</h2>
+    <div class="card">
+      <p>Hive is a data warehouse tool that uses HiveQL.</p>
+      <pre>
 CREATE TABLE student(
 id INT,
 name STRING
-);</pre
-        >
-        <p>
-          Topics: Data Types, Partitioning, Bucketing, HiveQL Operations,
-          Operators.
-        </p>
-    </section>
+);</pre>
+      <p>
+        Topics: Data Types, Partitioning, Bucketing, HiveQL Operations,
+        Operators.
+      </p>
+  </section>
 
-    <!-- Hbase -->
+  <!-- Hbase -->
 
-    <section id="hbase">
-      <h2 class="section-title">Apache HBase</h2>
-      <div class="card">
-        <p>Distributed NoSQL database built on HDFS.</p>
-        <pre>
+  <section id="hbase">
+    <h2 class="section-title">Apache HBase</h2>
+    <div class="card">
+      <p>Distributed NoSQL database built on HDFS.</p>
+      <pre>
 create 'student','info'
 put 'student','1','info:name','Ajay'
-scan 'student'</pre
-        >
-        <p>
-          Topics: Architecture, Filters, Prefix Filter, Single Value Column
-          Filter, TTL.
-        </p>
-      </div>
-    </section>
+scan 'student'</pre>
+      <p>
+        Topics: Architecture, Filters, Prefix Filter, Single Value Column
+        Filter, TTL.
+      </p>
+    </div>
+  </section>
 
-    <!-- Cassandra -->
+  <!-- Cassandra -->
 
-    <section id="cassandra">
-      <h2 class="section-title">Apache Cassandra</h2>
-      <div class="card">
-        <p>
-          Highly scalable distributed NoSQL database with peer-to-peer
-          architecture.
-        </p>
-        <pre>
+  <section id="cassandra">
+    <h2 class="section-title">Apache Cassandra</h2>
+    <div class="card">
+      <p>
+        Highly scalable distributed NoSQL database with peer-to-peer
+        architecture.
+      </p>
+      <pre>
 CREATE KEYSPACE college
 WITH replication =
 {'class':'SimpleStrategy',
@@ -415,60 +412,60 @@ WITH replication =
 CREATE TABLE student(
 id int PRIMARY KEY,
 name text
-);</pre
-        >
-        <p>
-          Topics: Gossip Protocol, Replication, Consistency Levels, Read/Write
-          Paths, Compaction.
-        </p>
-      </div>
-    </section>
-
-
-    <section>
-        <h2 class="section-title">pplications of Hadoop</h2>
-        <div class="grid">
-        <div class="card">Healthcare Analytics</div>
-        <div class="card">Fraud Detection</div>
-        <div class="card">Social Media Analysis</div>
-        <div class="card">Recommendation Systems</div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-
-        <section id="faq">
-      <h2 class="section-title">FAQ</h2>
-      <details>
-        <summary>What is Hadoop?</summary>
-        <p>Framework for distributed storage and processing.</p>
-      </details>
-      <details>
-        <summary>What is HDFS?</summary>
-        <p>Storage layer of Hadoop.</p>
-      </details>
-      <details>
-        <summary>What is Hive?</summary>
-        <p>SQL-like query engine for Hadoop.</p>
-      </details>
-      <details>
-        <summary>What is HBase?</summary>
-        <p>NoSQL database on HDFS.</p>
-      </details>
-      <details>
-        <summary>What is Cassandra?</summary>
-        <p>Distributed NoSQL database.</p>
-      </details>
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-        <h3>Hadoop Learning Portal</h3>
+);</pre>
       <p>
-        Big Data | Hadoop | HDFS | MapReduce | YARN | Hive | HBase | Cassandra
+        Topics: Gossip Protocol, Replication, Consistency Levels, Read/Write
+        Paths, Compaction.
       </p>
-    </footer>
+    </div>
+  </section>
 
-  </body>
+
+  <section>
+    <h2 class="section-title">Applications of Hadoop</h2>
+    <div class="grid">
+      <div class="card">Healthcare Analytics</div>
+      <div class="card">Fraud Detection</div>
+      <div class="card">Social Media Analysis</div>
+      <div class="card">Recommendation Systems</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section id="faq">
+    <h2 class="section-title">FAQ</h2>
+    <details>
+      <summary>What is Hadoop?</summary>
+      <p>Framework for distributed storage and processing.</p>
+    </details>
+    <details>
+      <summary>What is HDFS?</summary>
+      <p>Storage layer of Hadoop.</p>
+    </details>
+    <details>
+      <summary>What is Hive?</summary>
+      <p>SQL-like query engine for Hadoop.</p>
+    </details>
+    <details>
+      <summary>What is HBase?</summary>
+      <p>NoSQL database on HDFS.</p>
+    </details>
+    <details>
+      <summary>What is Cassandra?</summary>
+      <p>Distributed NoSQL database.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+    <h3>Hadoop Learning Portal</h3>
+    <p>
+      Big Data | Hadoop | HDFS | MapReduce | YARN | Hive | HBase | Cassandra
+    </p>
+  </footer>
+
+</body>
+
 </html>
