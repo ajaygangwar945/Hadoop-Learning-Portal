@@ -152,7 +152,23 @@ sections:
   * Sum of Even Numbers: Conditional loop matching even parity criteria.
 
 --------------------------------------------------------------------------------
-5. MAINTENANCE & ENHANCEMENT ROADMAP
+5. SECURITY AUDIT & BEST PRACTICES
+--------------------------------------------------------------------------------
+The project codebase has been audited for security and follows best practices:
+- Zero Secrets Exposure: Static scans confirmed no hardcoded keys, access tokens,
+  passwords, or private credentials exist within the repository.
+- Secure CI/CD Workflow: Integration with Docker Hub is configured via encrypted
+  GitHub Secrets (`DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`), preventing leakages
+  in the workflow file.
+- Secure Container footprint: Base container utilizes `nginx:alpine` to run only
+  essential static content, which dramatically reduces the vulnerability surface 
+  compared to standard full-OS base images.
+- Pure Static Frontend: Since the frontend operates entirely on client-side HTML/CSS,
+  there are no cross-site scripting (XSS) inputs, server-side request forgery (SSRF)
+  paths, or database injection vulnerabilities present.
+
+--------------------------------------------------------------------------------
+6. MAINTENANCE & ENHANCEMENT ROADMAP
 --------------------------------------------------------------------------------
 Developers wishing to expand this application can easily do so:
 1. Custom Styles: Modify `:root` color definitions in `index.html` to adjust the

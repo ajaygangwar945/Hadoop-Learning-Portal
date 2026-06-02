@@ -1,6 +1,6 @@
- <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: cover; border-radius: 8px;" />
+ <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: cover;" />
 
-<h1 align="center"> Hadoop Learning Portal</h1>
+<h1 align="center">🐘 Hadoop Learning Portal</h1>
 
 <p align="center">
   <a href="https://ajaygangwar945.github.io/Hadoop-Learning-Portal/">
@@ -20,25 +20,22 @@ The **Hadoop Learning Portal** is a sleek, modern, and interactive single-page e
 
 This repository contains everything from conceptual explanations of Big Data and core Hadoop architecture to practical code snippets for Apache Hive, HBase, Cassandra, and standard Java utility programs. It is built as a highly responsive web application, packaged with Docker, and deployed via standard automated CI/CD workflows.
 
-🔗 **Explore the Live App:** [Hadoop Learning Portal Live](https://ajaygangwar945.github.io/Hadoop-Learning-Portal/)
+## 🚀 View Live Site
+
+The project is live and accessible online.
+
+<a href="https://ajaygangwar945.github.io/Hadoop-Learning-Portal/">
+    <img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-FFD700?style=for-the-badge&logo=github&logoColor=black" alt="Live Demo" /></a>
 
 ---
 
 ## 🚀 Key Features
 
-* **Introduction to Big Data:** Clear breakdown of Structured, Semi-Structured, and Unstructured data, as well as the **5 V's of Big Data** (Volume, Velocity, Variety, Veracity, Value).
-* **Hadoop Core Architecture:** Detail-rich explanations of major core components:
-  * **NameNode & DataNode** (Storage)
-  * **JobTracker & TaskTracker** (MapReduce Processing)
-  * **YARN Architecture** (Resource Manager, Node Manager, Application Master, Containers)
-* **Hands-on Command Guide:** Ready-to-use commands for **HDFS**, **MapReduce**, and database systems.
-* **Java Programming Snippets:** Practical implementations for general arithmetic and algorithmic tasks (Factorial, Palindrome, Armstrong numbers, Sum of Evens).
-* **Multi-Database Ecosystem Coverage:**
-  * **Apache Hive:** HiveQL operations, partitioning, and bucketing.
-  * **Apache HBase:** Column family management, NoSQL querying, and prefix filters.
-  * **Apache Cassandra:** Key-space creation, replication strategies, and query styling.
-* **Interactive FAQs:** Expandable accordion system addressing the most common big data technical questions.
-* **Premium Dark UI/UX:** Responsive interface featuring frosted glassmorphic card elements, custom neon highlight schemes, smooth animations, and code block formatting.
+* **Big Data & Hadoop Basics:** Overview of the 5 V's and core components (HDFS, YARN, MapReduce).
+* **Architecture Guides:** Clear breakdown of NameNode, DataNode, JobTracker, YARN, and TaskTracker structures.
+* **Multi-Database Reference:** Practical syntax and guides for Apache Hive, HBase, and Cassandra.
+* **Interactive FAQ & Snippets:** Hands-on commands, basic Java puzzles, and collapsible FAQ answers.
+* **Modern Dark UI:** Fully responsive design with glassmorphic cards and micro-animations.
 
 ---
 
@@ -69,22 +66,34 @@ This repository contains everything from conceptual explanations of Big Data and
 
 This project is fully containerized using **Nginx on Alpine Linux** to ensure high-performance static file serving and minimal memory footprint.
 
-### Running Locally with Docker
+### Running Locally (Build from Source)
 
 1. **Build the Docker Image:**
-
-    ```bash
-    docker build -t hadoop-learning-portal .
-    ```
+   ```bash
+   docker build -t hadoop-learning-portal .
+   ```
 
 2. **Run the Container:**
+   ```bash
+   docker run -d -p 8080:80 --name hadoop-portal-instance hadoop-learning-portal
+   ```
 
-    ```bash
-    docker run -d -p 8080:80 --name hadoop-portal-instance hadoop-learning-portal
-    ```
+### Pull and Run from Docker Hub
+
+Alternatively, you can pull and run the pre-built public Docker image directly:
+
+1. **Pull the Image:**
+   ```bash
+   docker pull ajaygangwar945/hadoop-learning-portal:latest
+   ```
+
+2. **Run the Container:**
+   ```bash
+   docker run -d -p 8080:80 --name hadoop-portal-instance ajaygangwar945/hadoop-learning-portal:latest
+   ```
 
 3. **Access the Application:**
-    Open your browser and navigate to `http://localhost:8080`.
+   Open your browser and navigate to `http://localhost:8080`.
 
 ---
 
@@ -103,4 +112,4 @@ The project features a fully automated deployment pipeline integrated with **Git
 
 ## 📝 Authors
 
-* **Ajay Gangwar** - [ajaygangwar945](https://github.com/ajaygangwar945)
+*   **Ajay Gangwar** - [@ajaygangwar945](https://github.com/ajaygangwar945)
