@@ -1,4 +1,4 @@
- <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: cover;" />
+ <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: contain; background: #0d1117; border-radius: 8px;" />
 
 <h1 align="center"> Hadoop Learning Portal</h1>
 
