@@ -162,6 +162,23 @@
         padding: 30px;
         background: black;
       }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          justify-content: flex-start;
+          padding: 10px;
+        }
+
+        nav ul::-webkit-scrollbar {
+          display: none;
+        }
+
+        nav ul li {
+          flex-shrink: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -173,7 +190,6 @@
         <li><a href="#bigdata">Big Data</a></li>
         <li><a href="#hadoop">Hadoop</a></li>
         <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#yarn">YARN</a></li>
         <li><a href="#hive">Hive</a></li>
         <li><a href="#hbase">HBase</a></li>
         <li><a href="#cassandra">Cassandra</a></li>
@@ -266,7 +282,51 @@
 
     <!-- HDFS -->
 
-    
+    <section>
+      <h2 class="section-title">HDFS</h2>
+      <div class="card">
+        <p>
+          HDFS is Hadoop Distributed File System used for fault-tolerant
+          storage.
+        </p>
+        <pre>
+hdfs dfs -mkdir /data
+hdfs dfs -put file.txt /data
+hdfs dfs -ls /</pre
+        >
+      </div>
+    </section>
 
+    <!-- MapReduce -->
+
+    <section>
+      <h2 class="section-title">MapReduce</h2>
+      <div class="card">
+        <p>MapReduce consists of Map, Shuffle and Reduce phases.</p>
+        <pre>Input -> Mapper -> Shuffle -> Reducer -> Output</pre>
+        <h3>Word Count Output</h3>
+        <pre>
+Hadoop : 3
+BigData : 2</pre
+        >
+      </div>
+    </section>
+
+    <!-- Yarn -->
+
+    <section>
+      <h2 class="section-title">YARN</h2>
+      <div class="card">
+        <p>Yet Another Resource Negotiator manages cluster resources.</p>
+        <ul>
+          <li>Resource Manager</li>
+          <li>Node Manager</li>
+          <li>Application Master</li>
+          <li>Containers</li>
+        </ul>
+      </div>
+    </section>
+
+    
   </body>
 </html>
