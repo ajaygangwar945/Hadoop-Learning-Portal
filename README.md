@@ -1,14 +1,12 @@
- <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: contain; background: #0d1117; border-radius: 8px;" />
+ <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" style="border-radius: 8px;" />
 
 <h1 align="center"> Hadoop Learning Portal</h1>
 
 <p align="center">
   <a href="https://ajaygangwar945.github.io/Hadoop-Learning-Portal/">
-    <img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-FFD700?style=for-the-badge&logo=github&logoColor=black" alt="Live Demo" />
-  </a>
+    <img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-FFD700?style=for-the-badge&logo=github&logoColor=black" alt="Live Demo" /></a>
   <a href="https://hub.docker.com/r/ajaygangwar945/hadoop-learning-portal">
-    <img src="https://img.shields.io/badge/Docker%20Hub-Repository-0db7ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub" />
-  </a>
+    <img src="https://img.shields.io/badge/Docker%20Hub-Repository-0db7ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub" /></a>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
