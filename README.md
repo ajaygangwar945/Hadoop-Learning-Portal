@@ -1,4 +1,4 @@
- <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: cover;" />
+ <img src="hadoop_banner.png" alt="Hadoop Learning Portal Banner" width="100%" height="200" style="object-fit: cover; " align="center"/>
 
 <h1 align="center">🐘 Hadoop Learning Portal</h1>
 
@@ -69,11 +69,13 @@ This project is fully containerized using **Nginx on Alpine Linux** to ensure hi
 ### Running Locally (Build from Source)
 
 1. **Build the Docker Image:**
+
    ```bash
    docker build -t hadoop-learning-portal .
    ```
 
 2. **Run the Container:**
+
    ```bash
    docker run -d -p 8080:80 --name hadoop-portal-instance hadoop-learning-portal
    ```
@@ -83,11 +85,13 @@ This project is fully containerized using **Nginx on Alpine Linux** to ensure hi
 Alternatively, you can pull and run the pre-built public Docker image directly:
 
 1. **Pull the Image:**
+
    ```bash
    docker pull ajaygangwar945/hadoop-learning-portal:latest
    ```
 
 2. **Run the Container:**
+
    ```bash
    docker run -d -p 8080:80 --name hadoop-portal-instance ajaygangwar945/hadoop-learning-portal:latest
    ```
@@ -112,4 +116,4 @@ The project features a fully automated deployment pipeline integrated with **Git
 
 ## 📝 Authors
 
-*   **Ajay Gangwar** - [@ajaygangwar945](https://github.com/ajaygangwar945)
+* **Ajay Gangwar** - [@ajaygangwar945](https://github.com/ajaygangwar945)
