@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hadoop Learning Portal</title>
+    <link rel="icon" type="image/svg+xml" href="Apache Hadoop.svg">
 
     <style>
       * {
@@ -164,11 +165,14 @@
       }
 
       @media (max-width: 768px) {
+        .home h1{
+          font-size: 2rem;
+        }
         nav ul {
           flex-wrap: nowrap;
           overflow-x: auto;
           justify-content: flex-start;
-          padding: 10px;
+          padding: 5px;
         }
 
         nav ul::-webkit-scrollbar {
@@ -198,7 +202,8 @@
     </nav>
 
     <section class="home" id="home">
-      <h1>🐘 Hadoop Learning Portal</h1>
+      <img src="Apache Hadoop.svg" width="100px" height="100px">
+      <h1>Hadoop Learning Portal</h1>
       <p>
         Learn Big Data, Hadoop Architecture, Hadoop Ecosystem, Installation
         Steps, Commands, and Frequently Asked Questions in one beautiful
@@ -327,6 +332,143 @@ BigData : 2</pre
       </div>
     </section>
 
-    
+    <section>
+        <h2 class="section-title">Java Programs</h2>
+        <dev class="grid">
+            <div class="card">
+          <h3>Factorial</h3>
+          <pre>
+int fact=1;
+for(int i=1;i<=n;i++)
+fact*=i;</pre
+          >
+        </div>
+        <div class="card">
+          <h3>Palindrome</h3>
+          <pre>madam -> madam</pre>
+        </div>
+        <div class="card">
+          <h3>Armstrong</h3>
+          <pre>153 = 1³+5³+3³</pre>
+        </div>
+        <div class="card">
+          <h3>Sum of Even</h3>
+          <pre>
+for(i=1;i<=n;i++)
+if(i%2==0) sum+=i;</pre
+          >
+        </div>
+        </div>
+    </section>
+
+    <!-- Hive -->
+
+    <section id="hive">
+        <h2 class="section-title">Apache Hive</h2>
+      <div class="card">
+        <p>Hive is a data warehouse tool that uses HiveQL.</p>
+        <pre>
+CREATE TABLE student(
+id INT,
+name STRING
+);</pre
+        >
+        <p>
+          Topics: Data Types, Partitioning, Bucketing, HiveQL Operations,
+          Operators.
+        </p>
+    </section>
+
+    <!-- Hbase -->
+
+    <section id="hbase">
+      <h2 class="section-title">Apache HBase</h2>
+      <div class="card">
+        <p>Distributed NoSQL database built on HDFS.</p>
+        <pre>
+create 'student','info'
+put 'student','1','info:name','Ajay'
+scan 'student'</pre
+        >
+        <p>
+          Topics: Architecture, Filters, Prefix Filter, Single Value Column
+          Filter, TTL.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cassandra -->
+
+    <section id="cassandra">
+      <h2 class="section-title">Apache Cassandra</h2>
+      <div class="card">
+        <p>
+          Highly scalable distributed NoSQL database with peer-to-peer
+          architecture.
+        </p>
+        <pre>
+CREATE KEYSPACE college
+WITH replication =
+{'class':'SimpleStrategy',
+'replication_factor':3};
+
+CREATE TABLE student(
+id int PRIMARY KEY,
+name text
+);</pre
+        >
+        <p>
+          Topics: Gossip Protocol, Replication, Consistency Levels, Read/Write
+          Paths, Compaction.
+        </p>
+      </div>
+    </section>
+
+
+    <section>
+        <h2 class="section-title">pplications of Hadoop</h2>
+        <div class="grid">
+        <div class="card">Healthcare Analytics</div>
+        <div class="card">Fraud Detection</div>
+        <div class="card">Social Media Analysis</div>
+        <div class="card">Recommendation Systems</div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+        <section id="faq">
+      <h2 class="section-title">FAQ</h2>
+      <details>
+        <summary>What is Hadoop?</summary>
+        <p>Framework for distributed storage and processing.</p>
+      </details>
+      <details>
+        <summary>What is HDFS?</summary>
+        <p>Storage layer of Hadoop.</p>
+      </details>
+      <details>
+        <summary>What is Hive?</summary>
+        <p>SQL-like query engine for Hadoop.</p>
+      </details>
+      <details>
+        <summary>What is HBase?</summary>
+        <p>NoSQL database on HDFS.</p>
+      </details>
+      <details>
+        <summary>What is Cassandra?</summary>
+        <p>Distributed NoSQL database.</p>
+      </details>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <h3>Hadoop Learning Portal</h3>
+      <p>
+        Big Data | Hadoop | HDFS | MapReduce | YARN | Hive | HBase | Cassandra
+      </p>
+    </footer>
+
   </body>
 </html>
