@@ -1,0 +1,164 @@
+================================================================================
+                      HADOOP LEARNING PORTAL - DOCUMENTATION
+================================================================================
+Version: 1.0.0
+Author: Ajay Gangwar
+GitHub Repo: https://github.com/ajaygangwar945/Hadoop-Learning-Portal
+Deploy Link: https://ajaygangwar945.github.io/Hadoop-Learning-Portal/
+Docker Image: ajaygangwar945/hadoop-learning-portal:latest
+Created Date: June 2, 2026
+================================================================================
+
+--------------------------------------------------------------------------------
+1. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+The Hadoop Learning Portal is a light-weight, highly responsive, single-page 
+educational web application designed to serve as a comprehensive reference guide 
+for learning Apache Hadoop, Big Data architectures, and related NoSQL database 
+ecosystems. 
+
+The application is structured to provide both technical definitions and hands-on
+code examples in a visually engaging and cohesive dark theme. It acts as a one-stop
+portal for:
+- Big Data foundations and concepts.
+- Apache Hadoop Core components (HDFS, YARN, MapReduce).
+- Distributed NoSQL databases (Apache Hive, HBase, Cassandra).
+- Basic Java programming puzzles often used in academic data preparation.
+- System administration and command-line usage references.
+
+The project is fully ready for modern containerized hosting using Docker and
+incorporates automated continuous integration (CI/CD) pipelines to push built
+images to Docker Hub.
+
+--------------------------------------------------------------------------------
+2. CODEBASE & FILE STRUCTURE
+--------------------------------------------------------------------------------
+The project follows a clean, single-page architecture that avoids heavy external 
+dependencies, ensuring ultra-fast loading times and seamless offline performance.
+
+- /Hadoop-Learning-Portal/ (Root Workspace)
+  ├── .github/
+  │   └── workflows/
+  │       └── docker.yaml        # Automated GitHub Actions workflow file
+  ├── Apache Hadoop.svg          # Apache Hadoop official vector logo (favicon / brand asset)
+  ├── Dockerfile                 # Multi-platform web server packaging recipe
+  ├── index.html                 # Main entry point (HTML5, embedded CSS3, layout structures)
+  ├── hadoop_banner.png          # Generated visual tech-graphic header
+  ├── README.md                  # Visual Markdown documentation with shields.io badges
+  └── DOCUMENTATION.txt          # Technical layout & educational specifications (This File)
+
+--------------------------------------------------------------------------------
+3. DETAILED TECHNICAL ARCHITECTURE
+--------------------------------------------------------------------------------
+
+3.1 Frontend Web Architecture (index.html)
+- Structural Framework: Structured using HTML5 semantic elements (nav, section,
+  div, pre, details, footer) to maintain clean accessibility and SEO structure.
+- Style Sheet (CSS3): Written as an embedded style system inside the header for
+  instant CSS rendering. Key features include:
+  * Linear Gradient Background: Using a rich dark gradient (linear-gradient(135deg,
+    #111827, #1f2937)) resembling standard modern IDE aesthetics.
+  * Frosted Glassmorphism: Cards utilize rgba values combined with
+    'backdrop-filter: blur(10px)' to create a layered transparent depth.
+  * Responsive Layout: Employs CSS Grid Layout (grid-template-columns with
+    auto-fit and minmax) and CSS Flexible Box Layout (Flexbox) to look great on 
+    desktops, tablets, and phones.
+  * Mobile Optimization: Responsive media queries adjust the font size, and
+    convert the desktop header navbar into a touch-friendly swipeable horizontal
+    scroll element on screens smaller than 768px.
+  * Micro-Animations: Subtle transition delays (transition: 0.3s/0.4s) manage hover
+    scaling and element translation offsets.
+
+3.2 Containerization Model (Dockerfile)
+- Base Image: Alpine-based Nginx image (nginx:alpine). This provides a production-grade,
+  lightweight, and secure HTTP server environment of less than 25MB.
+- Work Directory: Standard default HTML static directory under `/usr/share/nginx/html`.
+- Build Steps: Copies the entire source directory (including assets, index.html,
+  and documentation) directly into Nginx's public serving directory.
+- Ports: Exposes default HTTP Port 80.
+- Command: Starts Nginx in the foreground (`daemon off`) to integrate smoothly 
+  with container orchestration engines.
+
+3.3 CI/CD Workflow (.github/workflows/docker.yaml)
+- Automation Engine: GitHub Actions.
+- Execution Trigger: Runs automatically on every push event to the `main` branch.
+- Environment: Built on the `ubuntu-latest` runner virtual machine.
+- Steps Performed:
+  1. Checkout: Clones the codebase.
+  2. Authentication: Performs Docker login to Docker Hub using encrypted secrets
+     (`DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`).
+  3. Image Construction: Executes `docker build` using the Dockerfile.
+  4. Multi-Tag Strategy: Creates two separate tags:
+     - `latest`: Always points to the most recent successful build.
+     - `${{ github.run_number }}`: Generates a persistent incremental version tag
+       for easy rollback.
+  5. Image Registry Upload: Pushes both built image tags up to Docker Hub.
+
+--------------------------------------------------------------------------------
+4. EDUCATIONAL MODULES EXPLAINED
+--------------------------------------------------------------------------------
+The portal includes a wealth of structured educational content divided into 
+sections:
+
+4.1 Big Data Foundations
+- Core Concept: Huge volumes of structured, semi-structured, and unstructured
+  data that cannot be processed efficiently using traditional relational databases.
+- The 5 V's:
+  * Volume: The massive scale of data generated.
+  * Velocity: The real-time speed at which data accumulates and flows.
+  * Variety: Diverse formats (logs, media, database tables, JSON records).
+  * Veracity: The accuracy and trustworthiness of the source data.
+  * Value: The ultimate business insights and analytical gains extracted.
+
+4.2 Apache Hadoop Core Architecture
+- Primary Function: Open-source framework designed for distributed storage and
+  processing of massive datasets across commodity hardware clusters.
+- Storage Layer (HDFS - Hadoop Distributed File System):
+  * NameNode: Master node that maintains and manages directory trees and block
+    metadata.
+  * DataNode: Worker nodes that store the actual data blocks and execute local
+    read/write operations.
+- Processing Layer (MapReduce):
+  * JobTracker: Cluster coordinator that schedules jobs and directs task execution.
+  * TaskTracker: Executing agents that run Mapper, Shuffle, and Reducer tasks.
+- Cluster Management (YARN - Yet Another Resource Negotiator):
+  * ResourceManager: Arbitrates resources across all active applications.
+  * NodeManager: Monitours container resource usage (CPU, memory, disk, network).
+  * ApplicationMaster: Negotiates resources and executes job flows.
+  * Container: Represents logical resource allocations.
+
+4.3 Distributed Database Systems & Query Engines
+- Apache Hive: A data warehouse infrastructure built on top of Hadoop. Translates
+  SQL-like queries (HiveQL) into MapReduce/Tez jobs.
+  * Topic Scope: Partitioning, Bucketing, HiveQL syntax, Custom Operators.
+- Apache HBase: Column-oriented distributed NoSQL database built on top of HDFS.
+  Designed for real-time, random read/write access.
+  * Topic Scope: HBase Architecture, Filters, Prefix Filters, Column Filters, TTL.
+- Apache Cassandra: Decentralized, masterless peer-to-peer NoSQL database. No single
+  point of failure, high write availability.
+  * Topic Scope: Gossip Protocol, Replication Strategies (e.g. SimpleStrategy),
+    Consistency Levels, Compaction processes.
+
+4.4 HDFS Commands Cheat Sheet
+- Create folder: `hdfs dfs -mkdir /data`
+- Upload local file: `hdfs dfs -put file.txt /data`
+- List directory contents: `hdfs dfs -ls /`
+
+4.5 Programming Snippets
+- The portal contains functional java fragments for standard educational logic:
+  * Factorial Computation: Linear iteration tracking cumulative products.
+  * Palindrome Verification: String matching logic (e.g. "madam" -> "madam").
+  * Armstrong Number Calculation: Evaluating sum of cubes of individual digits.
+  * Sum of Even Numbers: Conditional loop matching even parity criteria.
+
+--------------------------------------------------------------------------------
+5. MAINTENANCE & ENHANCEMENT ROADMAP
+--------------------------------------------------------------------------------
+Developers wishing to expand this application can easily do so:
+1. Custom Styles: Modify `:root` color definitions in `index.html` to adjust the
+   color variables globally (e.g., --yellow, --blue).
+2. Adding Sections: Copy existing CSS `section` and card blocks to create new 
+   modules (e.g., Apache Spark, Kafka).
+3. Docker Modifications: Customize `Dockerfile` if custom Nginx configurations
+   or URL redirection rules are required.
+================================================================================
